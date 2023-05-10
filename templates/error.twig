@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<h1>Aw shucks!</h1>
+	<p>It seems you have encountered a wild {{ error }} error!</p>
+	<p>You can always try to</p>
+	<ul>
+		<li><a href="/pages">Go to the page list</a></li>
+		<li><a href="#" onclick="history.back()">Go back to the previous page</a></li>
+		<li><a href="{{ info.REQUEST_URI }}">Reload this page</a></li>
+	</ul>
+{% endblock %}

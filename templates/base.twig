@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/{{ config.blog_stylesheet }}">
+	</head>
+	<body>
+		<div class="body">
+			<div class="header">
+				<h1><a href="/">{{ config.blog_name }}</a></h1>
+			</div>
+
+			<div class="content">
+				{% block content %}{% endblock %}
+			</div>
+
+			<div class="nav">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/pages">Pages</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

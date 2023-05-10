@@ -62,3 +62,5 @@
 .history/
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Symfony,VisualStudioCode
+
+cache/

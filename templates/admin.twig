@@ -9,10 +9,14 @@
 
 	<form action="./action" method="post" enctype="multipart/form-data">
 		<select name="post" placeholder="Select a post">
-			<option value="">Select a post</option>
-			{% for post in posts %}
-				<option value="{{ post.id }}">{{ post.title }}</option>
-			{% endfor %}
+			{% if posts %}
+				<option value="">Select a post</option>
+				{% for post in posts %}
+					<option value="{{ post.id }}">{{ post.title }}</option>
+				{% endfor %}
+			{% else %}
+				<option value="0">No posts</option>
+			{% endif %}
 		</select>
 	</form>
 {% endblock %}

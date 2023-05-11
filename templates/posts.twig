@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<h1>Post list</h1>
+	{% if vars.posts %}
+		{% for post in vars.posts %}
+			<div class="post-preview">
+				<h1><a href="{{ post.url }}#">{{ post.title }}</a></h1>
+				<p>{{ post.desc }}</p>
+				<span>Posted on: {{ post.date }}</span>
+			</div>
+		{% endfor %}
+	{% else %}
+		<h2>No posts found</h2>
+	{% endif %}
+{% endblock %}

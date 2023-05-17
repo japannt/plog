@@ -2,7 +2,7 @@
 
 {% block content %}
 	<h1>Admin Panel/New Post</h1>
-	<form action="{{ config.directory }}/admin/new/post.php" method="post" enctype="multipart/form-data">
+	<form action="/{{ config.directory }}/admin/new/post.php" method="post" enctype="multipart/form-data">
 		<label for="title">Title</label>
 		<input type="text" name="title" id="title" value="{{ session.title }}">
 		<label for="description">Description</label>

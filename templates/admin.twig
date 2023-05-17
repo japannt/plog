@@ -3,11 +3,11 @@
 {% block content %}
 	<h1>Admin Panel</h1>
 
-	<a href="{{ config.directory }}/admin/new">New Post</a>
+	<a href="/{{ config.directory }}/admin/new">New Post</a>
 
 	<hr>
 
-	<form action="{{ config.directory }}/admin/edit.php" method="post" enctype="multipart/form-data">
+	<form action="/{{ config.directory }}/admin/edit.php" method="post" enctype="multipart/form-data">
 		<select name="post" placeholder="Select a post">
 			{% if posts %}
 				<option value="">Select a post</option>

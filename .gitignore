@@ -64,6 +64,4 @@
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Symfony,VisualStudioCode
 
 cache/
-*.css
-*.css.map
 blog.db

@@ -9,3 +9,11 @@
 
 	file_server
 }
+
+
+:8181 {
+	handle /blog/* {
+		uri strip_prefix /blog
+		reverse_proxy localhost:8080
+	}
+}

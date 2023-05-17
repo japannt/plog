@@ -6,30 +6,55 @@
 		<meta name="title" content="{{ config.blog_name }}">
 		<meta name="description" content="{{ config.blog_description }}">
 		
-		<link rel="stylesheet" href="/css/{{ config.blog_stylesheet }}">
+		<link rel="stylesheet" href="{{ config.directory }}/css/{{ config.blog_stylesheet }}">
 	</head>
 	<body>
 		<div class="body">
 			<div class="header">
-				<h1><a href="/">{{ config.blog_name }}</a></h1>
+				<h1><a href="{{ config.directory }}">{{ config.blog_name }}</a></h1>
 			</div>
+
+			{% if session.info %}
+				<div class="info">
+					<p>{{ session.info }}</p>
+				</div>
+			{% endif %}
+
+			{% if session.error %}
+				<div class="info error">
+					<p>{{ session.error }}</p>
+				</div>
+			{% endif %}
+
+			{% if session.success %}
+				<div class="info success">
+					<p>{{ session.success }}</p>
+				</div>
+			{% endif %}
 
 			<div class="content">
 				{% block content %}{% endblock %}
 
 				<div class="footer">
-					<p>Powered by <a href="https://github.com/japannt/plog">plog</a></p>
+					<p>Powered by <a href="https://github.com/japannt/plog">plog!</a></p>
 				</div>
 			</div>
 
 			<div class="nav">
 				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/posts">Posts</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
+					<li><a href="{{ config.directory }}">Home</a></li>
+					<li><a href="{{ config.directory }}/posts">Posts</a></li>
+					<li><a href="{{ config.directory }}/contact">Contact</a></li>
+					<li><a href="{{ config.directory }}/about">About</a></li>
 				</ul>
 			</div>
+
+			{% if vars.log %}
+				<div class="log">
+					<h2>Log</h2>
+					<pre>{{ vars.log|raw }}</pre>
+				</div>
+			{% endif %}
 		</div>
 	</body>
 </html>

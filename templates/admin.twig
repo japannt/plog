@@ -3,20 +3,21 @@
 {% block content %}
 	<h1>Admin Panel</h1>
 
-	<a href="./new">New Post</a>
+	<a href="{{ config.directory }}/admin/new">New Post</a>
 
 	<hr>
 
-	<form action="./action" method="post" enctype="multipart/form-data">
+	<form action="edit.php" method="post" enctype="multipart/form-data">
 		<select name="post" placeholder="Select a post">
 			{% if posts %}
 				<option value="">Select a post</option>
 				{% for post in posts %}
-					<option value="{{ post.id }}">{{ post.title }}</option>
+					<option value="{{ post.id }}">{{ post.title }} ({{ post.id }})</option>
 				{% endfor %}
 			{% else %}
-				<option value="0">No posts</option>
+				<option value="">No posts</option>
 			{% endif %}
 		</select>
+		<input type="submit" value="Edit">
 	</form>
 {% endblock %}

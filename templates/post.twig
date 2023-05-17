@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="post">
+		<h1>{{ post.title }}</h1>
+		<p class="description">{{ post.description }}</p>
+		<p class="date">{{ post.timestamp|date("F j, Y") }}</p>
+		<div class="md">
+			{{ post.content|raw }}
+		</div>
+	</div>
+{% endblock %}

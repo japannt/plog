@@ -2,12 +2,11 @@
 
 {% block content %}
 	<h1>Post list</h1>
-	{% if vars.posts %}
-		{% for post in vars.posts %}
+	{% if posts %}
+		{% for post in posts %}
 			<div class="post-preview">
-				<h1><a href="{{ post.url }}#">{{ post.title }}</a></h1>
-				<p>{{ post.desc }}</p>
-				<span>Posted on: {{ post.date }}</span>
+				<h1><a href="/post?id={{ post.id }}#">{{ post.title }}</a></h1>
+				<p>{{ post.description }}<span>Posted on: {{ post.timestamp|date("F j, Y") }}</span></p>
 			</div>
 		{% endfor %}
 	{% else %}

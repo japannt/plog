@@ -1,13 +1,12 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h1>Aw shucks!</h1>
-	<p>It seems you have encountered a wild {{ error }} error!</p>
-	<br>
-	<p>You can always try to</p>
+	<img class="left float small" src="http://http.cat/{{ error }}.jpg" alt="HTTP {{ error }} error">
+	<h1>A wild {{ error }}!</h1>
+	<p>Aww... Don't be sad, you can always try to</p>
 	<ul>
-		<li><a href="/posts">Go to the post list</a></li>
-		<li><a href="#" onclick="history.back()">Go back to the previous page</a></li>
-		<li><a href="{{ info.REQUEST_URI }}">Reload this page</a></li>
+		<li><a href="{{ config.directory }}/posts">Go to the post list.</a></li>
+		<li><a href="#" onclick="history.back()">Go back to the previous page.</a></li>
+		<li><a href="{{ vars.request_uri }}">Reload this page.</a></li>
 	</ul>
-{% endblock %}
+{% endblock %}	

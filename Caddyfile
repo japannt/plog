@@ -1,0 +1,11 @@
+:8080 {
+	root * /var/www/plog/public
+
+	encode gzip
+
+	php_fastcgi unix//run/php-fpm/www.sock
+
+	try_files {path} {path}/index.php /error.php
+
+	file_server
+}

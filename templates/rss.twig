@@ -10,7 +10,7 @@
             <item>
                 <title>{{ post.title }}</title>
                 <link>http://www.example.com/post/{{ post.slug }}</link>
-                <description>{{ post.content }}</description>
+                <description>{{ post.description }}</description>
                 <pubDate>{{ post.created_at|date('D, d M Y H:i:s O') }}</pubDate>
             </item>
         {% endfor %}

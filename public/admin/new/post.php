@@ -11,11 +11,11 @@ $_SESSION["content"] = $content;
 $_SESSION["description"] = $description;
 
 if(empty($title) || empty($content) || empty($description)) {
-    $_SESSION["error"] = "Title, description or content cannot be empty.";
-    header($config["directory"] . "Location: /admin/new/");
-    exit();
+	$_SESSION["error"] = "Title, description or content cannot be empty.";
+	header("Location: " . $config["directory"] . "/admin/new/");
+	exit();
 }
 
 $db->prepare("INSERT INTO posts (`title`, `description`, `content`, `timestamp`) VALUES (?, ?, ?, ?)")->execute([$title, $description, $content, time()]);
 $_SESSION["success"] = "Post created.";
-header($config["directory"] . "Location: /admin/");
+header("Location: ". $config["directory"] . "/admin/");

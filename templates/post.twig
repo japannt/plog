@@ -9,4 +9,26 @@
 			{{ post.content|raw }}
 		</div>
 	</div>
+
+	<div class="comments">
+		<h2>Comments</h2>
+		<form action="{{ config.directory }}/post/comment.php" method="post">
+			<input type="hidden" name="id" value="{{ post.id }}">
+			<label for="name">Name</label>
+			<input type="text" name="name" maxlength="24" value="Anonymous">
+			<label for="text">Comment</label>
+			<textarea name="text" maxlength="200"></textarea>
+			<input type="submit" value="Submit">
+		</form>
+		{# {% if comments %}
+			{% for comment in comments %} #}
+				<div class="comment">
+					<p class="name">{{ comment.name }}Anonymous<span class="timestamp">{{ comment.timestamp|date("F j, Y") }}</span></p>
+					<pre class="">{{ comment.text }}lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatem, quibusdam, voluptas, quia voluptate quod quos voluptatum quas quidem nesciunt doloremque doloribus. Quisquam, voluptatem, quibusdam, voluptas, quia voluptate quod quos voluptatum quas quidem nesciunt doloremque doloribus.</pre>
+				</div>
+			{# {% endfor %}
+		{% else %}
+			<p>No comments yet.</p>
+		{% endif %} #}
+	</div>
 {% endblock %}

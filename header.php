@@ -9,7 +9,11 @@ require_once("$root/config.php");
 $vars = [
 	"url" => $_SERVER['HTTP_HOST'],
 	"request_uri" => $_SERVER['REQUEST_URI'],
-	"log" => ""
+	"log" => "",
+
+	"error" => $_SESSION["error"] ?? null,
+	"success" => $_SESSION["success"] ?? null,
+	"info" => $_SESSION["info"] ?? null,
 ];
 
 function dev_print($var) {
@@ -74,7 +78,6 @@ $twig = new \Twig\Environment($loader, [
 
 $twig->addGlobal("config", $config);
 $twig->addGlobal("vars", $vars);
-$twig->addGlobal("session", $_SESSION);
 
 unset($_SESSION["error"]);
 unset($_SESSION["success"]);

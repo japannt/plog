@@ -1,17 +1,17 @@
 {# RSS Feed #}
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
-    <channel>
-        <title>{{ config.blog_name }}</title>
-        <link>{{ vars.url }}</link>
-        <description>{{ config.blog_description }}</description>
-        <language>{{ config.blog_language }}</language>
-        {% for post in posts %}
-            <item>
-                <title>{{ post.title }}</title>
-                <link>http://www.example.com/post/{{ post.slug }}</link>
-                <description>{{ post.description }}</description>
-                <pubDate>{{ post.created_at|date('D, d M Y H:i:s O') }}</pubDate>
-            </item>
-        {% endfor %}
-    </channel>
+	<channel>
+		<title>{{ config.blog_name }}</title>
+		<link>{{ vars.url }}</link>
+		<description>{{ config.blog_description }}</description>
+		<language>{{ config.blog_language }}</language>
+		{% for post in posts %}
+			<item>
+				<title>{{ post.title }}</title>
+				<link>http://www.example.com/post/{{ post.slug }}</link>
+				<description>{{ post.description }}</description>
+				<pubDate>{{ post.created_at|date('D, d M Y H:i:s O') }}</pubDate>
+			</item>
+		{% endfor %}
+	</channel>

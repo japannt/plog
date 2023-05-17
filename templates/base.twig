@@ -14,21 +14,21 @@
 				<h1><a href="{{ config.directory }}">{{ config.blog_name }}</a></h1>
 			</div>
 
-			{% if session.info %}
+			{% if vars.info %}
 				<div class="info">
-					<p>{{ session.info }}</p>
+					<p>{{ vars.info }}</p>
 				</div>
 			{% endif %}
 
-			{% if session.error %}
+			{% if vars.error %}
 				<div class="info error">
-					<p>{{ session.error }}</p>
+					<p>{{ vars.error }}</p>
 				</div>
 			{% endif %}
 
-			{% if session.success %}
+			{% if vars.success %}
 				<div class="info success">
-					<p>{{ session.success }}</p>
+					<p>{{ vars.success }}</p>
 				</div>
 			{% endif %}
 

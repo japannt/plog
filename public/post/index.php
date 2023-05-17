@@ -19,7 +19,11 @@ if($raw) {
 	die($post["content"]);
 }
 
+$comments = $db->prepare("SELECT * FROM `comments` WHERE `post_id` = ? ORDER BY `id` DESC");
+$comments->execute([$id]);
+$comments = $comments->fetchAll();
+
 use \Michelf\MarkdownExtra;
 $post["content"] = MarkdownExtra::defaultTransform($post["content"]);
 
-print($twig->render('post.twig', ["post" => $post]));
+print($twig->render('post.twig', ["post" => $post, "comments" => $comments]));

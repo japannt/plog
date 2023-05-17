@@ -20,15 +20,15 @@
 			<textarea name="text" maxlength="200"></textarea>
 			<input type="submit" value="Submit">
 		</form>
-		{# {% if comments %}
-			{% for comment in comments %} #}
+		{% if comments %}
+			{% for comment in comments %}
 				<div class="comment">
-					<p class="name">{{ comment.name }}Anonymous<span class="timestamp">{{ comment.timestamp|date("F j, Y") }}</span></p>
-					<pre class="">{{ comment.text }}lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatem, quibusdam, voluptas, quia voluptate quod quos voluptatum quas quidem nesciunt doloremque doloribus. Quisquam, voluptatem, quibusdam, voluptas, quia voluptate quod quos voluptatum quas quidem nesciunt doloremque doloribus.</pre>
+					<p class="name">{{ comment.author }}<span class="timestamp">{{ comment.timestamp|date("F j, Y") }}</span></p>
+					<pre>{{ comment.content }}</pre>
 				</div>
-			{# {% endfor %}
+			{% endfor %}
 		{% else %}
 			<p>No comments yet.</p>
-		{% endif %} #}
+		{% endif %}
 	</div>
 {% endblock %}

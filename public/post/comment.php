@@ -1,15 +1,15 @@
 <?php
 require_once("../../header.php");
 
+print_r($_POST);
+
 $id = $_POST["id"];
 $text = htmlspecialchars($_POST["text"]);
 $name = htmlspecialchars($_POST["name"]);
 
-print_r($_POST);
-
 if(empty($id) || empty($text) || empty($name)) {
 	$_SESSION["error"] = "Please fill out all fields.";
-	// header("Location: " . $config["directory"] . "/post?id=$id");
+	header("Location: " . $config["directory"] . "/post?id=$id");
 	exit();
 }
 
@@ -23,7 +23,7 @@ if(empty($post)) {
 	exit();
 }
 
-$comment = $db->prepare("INSERT INTO comments (`post_id`, `author`, `ip`, `text`, `timestamp`) VALUES (?, ?, ?, ?)");
+$comment = $db->prepare("INSERT INTO comments (`post_id`, `author`, `ip`, `content`, `timestamp`) VALUES (?, ?, ?, ?, ?)");
 $comment->execute([$id, $name, $_SERVER["REMOTE_ADDR"], $text, time()]);
 
 header("Location: " . $config["directory"] . "/post?id=$id");

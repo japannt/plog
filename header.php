@@ -6,8 +6,10 @@ session_start();
 require_once("$root/vendor/autoload.php");
 require_once("$root/config.php");
 
+
 $vars = [
 	"url" => $_SERVER['HTTP_HOST'],
+	"domain" => $_SERVER['SERVER_NAME'],
 	"request_uri" => $_SERVER['REQUEST_URI'],
 	"log" => "",
 

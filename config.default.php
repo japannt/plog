@@ -7,6 +7,12 @@ $config = [
 	"blog_stylesheet" => "style.css",
 	"blog_language" => "en-us",
 
+	"nav_links" => [
+		"Home" => "",
+		"Posts" => "posts",
+		"RSS" => "rss",
+	],
+
 	"admin_username" => "admin",
 	"admin_password" => "change_me",
 

@@ -9,7 +9,7 @@
 		{% for post in posts %}
 			<item>
 				<title>{{ post.title }}</title>
-				<link>https://{{ vars.domain }}/{{ config.directory }}/post?id={{ post.id }}</link>
+				<link>https://{{ vars.domain }}{{ config.directory }}/post?id={{ post.id }}</link>
 				<description>{{ post.description }}</description>
 				<pubDate>{{ post.created_at|date('D, d M Y H:i:s O') }}</pubDate>
 			</item>

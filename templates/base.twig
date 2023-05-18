@@ -47,7 +47,7 @@
 					<li><a href="{{ config.directory }}/contact">Contact</a></li>
 					<li><a href="{{ config.directory }}/about">About</a></li> #}
 					{% for link, url in config.nav_links %}
-						<li><a href="/{{ config.directory }}/{{ url }}">{{ link }}</a></li>
+						<li><a href="{{ config.directory }}/{{ url }}">{{ link }}</a></li>
 					{% endfor %}
 				</ul>
 			</div>
